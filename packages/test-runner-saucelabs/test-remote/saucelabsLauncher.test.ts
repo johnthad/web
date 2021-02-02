@@ -25,7 +25,7 @@ const sauceLabsLauncher = createSauceLabsLauncher(
 );
 
 describe('test-runner-saucelabs', function () {
-  this.timeout(200000);
+  this.timeout(400000);
 
   function createConfig() {
     return {
@@ -43,17 +43,18 @@ describe('test-runner-saucelabs', function () {
         //   browserVersion: 'latest',
         //   platformName: 'macOS 10.15',
         // }),
-        sauceLabsLauncher({
-          browserName: 'internet explorer',
-          browserVersion: '11.0',
-          platformName: 'Windows 7',
-        }),
+        // sauceLabsLauncher({
+        //   browserName: 'internet explorer',
+        //   browserVersion: '11.0',
+        //   platformName: 'Windows 7',
+        // }),
       ],
     };
   }
 
   runIntegrationTests(createConfig, {
     basic: true,
+    many: true,
     focus: false,
     groups: false,
     parallel: false,
